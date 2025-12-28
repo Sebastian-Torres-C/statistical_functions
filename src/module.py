@@ -49,16 +49,16 @@ def mediana(array):
 
     return float(mediana)
 
-def moda(array):
-    """Calcula la moda de un array, si no contiene valores validos
-    retorna NaN.
-
-    Retorna el resultado como un float.
+def moda(array, multiple=False):
+    """Calcula la moda de un array, si no contienen
+    valores validos retorna NaN. 
     
-    Si el array esta vacio, retornara NaN
-
-    Si hay multiples modas, retorna la primera que encuentra."""
-
+    Retorna el resultado como dos arrays, el primero con las modas 
+    y el segundo con sus frecuencias.
+    
+    Si alguno de los arrays esta vacio o si no comparten la misma cantidad de
+    elementos, retornara NaN"""
+    
     try:
         frecuencia = {}
         for n in array:
@@ -72,10 +72,19 @@ def moda(array):
     if len(frecuencia) == 0:
         return np.nan
 
-#ver como hacerlo multimodal
-
-    moda = max(frecuencia, key=frecuencia.get)
-    return float(moda)
+    max_numero = max(frecuencia.values())
+    frecuencias_maximas = {}
+    for key, value in frecuencia.items():
+        if value == max_numero:
+            frecuencias_maximas[key] = value
+    array1 = []
+    array2 = []
+    for key in frecuencias_maximas.keys():
+        array1.append(float(key))
+    array2.append(float(max_numero))
+    array1 = np.array(array1)
+    array2 = np.array(array2)
+    return array1, array2
 
 def rango(array):
     """Calcula el rango de un array, si no contiene valores validos
