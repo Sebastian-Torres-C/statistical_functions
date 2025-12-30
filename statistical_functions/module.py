@@ -49,7 +49,7 @@ def mediana(array):
 
     return float(mediana)
 
-def moda(array, multiple=False):
+def moda(array):
     """Calcula la moda de un array, si no contienen
     valores validos retorna NaN. 
     
