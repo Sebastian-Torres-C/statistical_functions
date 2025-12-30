@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 setup(
     name="stadistical_functions",
     version="0.1.2",      
-    packages=["stadistical_functions"],
+    packages=find_packages(),
     author="Sebastian Torres",
     author_email="sebastian.torres.carrasco@outlook.com",
     description="Compilado de funciones estadísticas utilizadas en el ramo de" \
@@ -19,5 +19,6 @@ setup(
     license="MIT",
 
 )
+
 
 
