@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="stadistical_functions",
-    version="0.1.0",      
+    version="0.1.1",      
     packages=find_packages(),
     author="Sebastian Torres",
     author_email="sebastian.torres.carrasco@outlook.com",
@@ -19,3 +19,4 @@ setup(
     license="MIT",
 
 )
+
