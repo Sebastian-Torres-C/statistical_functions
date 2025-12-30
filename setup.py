@@ -12,10 +12,10 @@ setup(
     "de la Universidad de Santiago de Chile.",
     url="https://github.com/Sebastian-Torres-C/statistical_functions",
     install_requires=[
-        "math",
         "numpy",
     ],
     python_requires=">=3.13",
     keywords="statistics",
     license="MIT",
+
 )
