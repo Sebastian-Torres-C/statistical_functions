@@ -3,8 +3,8 @@ from setuptools import setup, find_packages
 
 setup(
     name="stadistical_functions",
-    version="0.1.1",      
-    packages=find_packages(),
+    version="0.1.2",      
+    packages=["stadistical_functions"],
     author="Sebastian Torres",
     author_email="sebastian.torres.carrasco@outlook.com",
     description="Compilado de funciones estadísticas utilizadas en el ramo de" \
@@ -19,4 +19,5 @@ setup(
     license="MIT",
 
 )
+
 
