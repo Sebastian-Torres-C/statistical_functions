@@ -1,9 +1,8 @@
-#setup.py
 from setuptools import setup, find_packages
 
 setup(
-    name="stadistical_functions",
-    version="0.1.2",      
+    name="stadistical_functions312",
+    version="0.1.3",      
     packages=find_packages(),
     author="Sebastian Torres",
     author_email="sebastian.torres.carrasco@outlook.com",
@@ -14,7 +13,7 @@ setup(
     install_requires=[
         "numpy",
     ],
-    python_requires=">=3.13",
+    python_requires=">=3.9",
     keywords="statistics",
     license="MIT",
 
