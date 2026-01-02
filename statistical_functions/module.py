@@ -79,8 +79,8 @@ def moda(array):
     array1 = []
     array2 = []
     for key in frecuencias_maximas.keys():
-        array1.append(float(key))
-    array2.append(float(max_numero))
+        array1.append(key)
+    array2.append(max_numero)
     array1 = np.array(array1)
     array2 = np.array(array2)
     return array1, array2
