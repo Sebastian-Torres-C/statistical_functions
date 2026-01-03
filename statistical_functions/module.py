@@ -17,7 +17,7 @@ def media(array):
         for n in array:
             suma += n
     except TypeError:
-       return np.nan
+        return np.nan
 
     return suma / len(array)
 
