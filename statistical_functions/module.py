@@ -277,17 +277,15 @@ def freedman_and_diaconis(array):
         if np.isnan(iqr) or iqr == 0:
             return np.nan
 
-        # ancho de bin utilizando la formula de freedman & diaconis
-        h = 2 * iqr / (n ** (1/3))
+        ancho = 2 * iqr / (n ** (1/3))
         rango_total = rango(array)
 
-        if h <= 0 or rango_total == 0 or np.isnan(rango_total):
+        if ancho <= 0 or rango_total == 0 or np.isnan(rango_total):
             return 1
 
-        bins = rango_total / h
+        bins = rango_total / ancho
         bins_enteros = int(bins)
 
-        # Redondeo al entero más cercano
         if bins - bins_enteros >= 0.5:
             bins_final = bins_enteros + 1
         else:
