@@ -262,10 +262,9 @@ def correlacion(array_x, array_y):
     return float(correlacion)
 
 def freedman_and_diaconis(array):
-    """Calcula el número de bins usando la regla de Freedman–Diaconis.
+    """Calcula el número de bins usando la regla de Freedman & Diaconis.
 
-    No utiliza funciones del módulo `math` (solo operadores y funciones de
-    `numpy`). Devuelve un entero con el número de bins o `np.nan` si la
+    Devuelve un entero con el número de bins o `np.nan` si la
     entrada no es válida.
     """
 
