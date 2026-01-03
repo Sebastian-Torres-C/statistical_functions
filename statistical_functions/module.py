@@ -296,3 +296,30 @@ def freedman_and_diaconis(array):
         return int(bins_final)
     except TypeError:
         return np.nan
+
+def conteo(array):
+    """Calcula las ocurrencias de cada dato dentro de un array 
+    (puede contener valores int/str)
+    y te regresa un diccionario en donde las llaves son los datos
+    y los valores son la cantidad de veces que aparecieron.
+    
+    Retorna el resultado como un diccionario.
+    
+    Si alguno de los arrays esta vacio retornara NaN
+    """
+    
+    try:
+        n = len(array)
+        if n == 0:
+            return np.nan
+        
+        frecuencia2 = {}
+        for n in array:
+            if n in frecuencia2:
+                frecuencia2[n] += 1
+            else:
+                frecuencia2[n] = 1
+        return frecuencia2
+    except TypeError:
+        return np.nan
+    
