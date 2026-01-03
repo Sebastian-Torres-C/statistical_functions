@@ -17,7 +17,7 @@ def media(array):
         for n in array:
             suma += n
     except TypeError:
-        return np.nan
+       return np.nan
 
     return suma / len(array)
 
@@ -260,3 +260,44 @@ def correlacion(array_x, array_y):
         return np.nan
 
     return float(correlacion)
+
+
+def freedman_and_diaconis(array):
+    """Calcula el número de bins usando la regla de Freedman–Diaconis.
+
+    No utiliza funciones del módulo `math` (solo operadores y funciones de
+    `numpy`). Devuelve un entero con el número de bins o `np.nan` si la
+    entrada no es válida.
+    """
+
+    try:
+        n = len(array)
+        if n == 0:
+            return np.nan
+
+        iqr = rango_intercuartil(array)
+        if np.isnan(iqr) or iqr == 0:
+            return np.nan
+
+        # ancho de bin utilizando la formula de freedman & diaconis
+        h = 2 * iqr / (n ** (1/3))
+        rango_total = rango(array)
+
+        if h <= 0 or rango_total == 0 or np.isnan(rango_total):
+            return 1
+
+        bins = rango_total / h
+        bins_enteros = int(bins)
+
+        # Redondeo al entero más cercano
+        if bins - bins_enteros >= 0.5:
+            bins_final = bins_enteros + 1
+        else:
+            bins_final = bins_enteros
+
+        if bins_final < 1:
+            bins_final = 1
+        return int(bins_final)
+    except TypeError:
+        return np.nan
+
