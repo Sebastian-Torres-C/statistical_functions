@@ -190,7 +190,10 @@ def percentil(array, percentil):
 
     k = (n) * (percentil / 100)
     if k != int(k):
-        return float((array_ordenado[int(k)]+array_ordenado[int(k)+1])/2)
+        try:
+            return float((array_ordenado[int(k)]+array_ordenado[int(k)+1])/2)
+        except IndexError:
+            return float(array_ordenado[int(k)])
     else:
         return float(array_ordenado[int(k)])
     
